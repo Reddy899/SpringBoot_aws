@@ -49,7 +49,7 @@ public class ProductController {
    }
 
 //Delete an existing product in Database
-    @DeleteMapping
+    @DeleteMapping("/product")
     public ResponseEntity<Product> deleteProduct(@RequestParam(name="productId") long productId)
     {
         Product deleteProduct=productService.deleteProduct(productId);
@@ -58,6 +58,7 @@ public class ProductController {
     }
 
 // Get product by name using raw SQL
+    @GetMapping("/product-by-name")
   public List<Product> getProductByName(@RequestParam(name="product_name") String product_name)
    {
 
